@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import he from 'he'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 
 import { getPortfolioSlugs, getPortfolioItem } from '../../lib/data'
 
@@ -22,11 +25,12 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       portfolioItem: portfolioItem.portfolios[0],
+      content: await serialize(he.decode(portfolioItem.portfolios[0].content)),
     },
   }
 }
 
-export default function Home({ portfolioItem }) {
+export default function Home({ portfolioItem, content }) {
   console.log(portfolioItem)
 
   return (
@@ -38,6 +42,7 @@ export default function Home({ portfolioItem }) {
       </Head>
       <div>
         <h1>{portfolioItem.title}</h1>
+        <p>{new Date(portfolioItem.date).toDateString()}</p>
         <p>{portfolioItem.description}</p>
         <div>
           {portfolioItem.tags.map((tag) => (
@@ -49,6 +54,7 @@ export default function Home({ portfolioItem }) {
             height={portfolioItem.coverImage.height}
             alt=""
           />
+          <div>{<MDXRemote {...content} />}</div>
         </div>
       </div>
     </div>
