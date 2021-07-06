@@ -44,18 +44,18 @@ export default function Home({ portfolioItem, content }) {
         <h1>{portfolioItem.title}</h1>
         <p>{new Date(portfolioItem.date).toDateString()}</p>
         <p>{portfolioItem.description}</p>
+        <Image
+          src={portfolioItem.coverImage.url}
+          width={portfolioItem.coverImage.width}
+          height={portfolioItem.coverImage.height}
+          alt=""
+        />
         <div>
           {portfolioItem.tags.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
-          <Image
-            src={portfolioItem.coverImage.url}
-            width={portfolioItem.coverImage.width}
-            height={portfolioItem.coverImage.height}
-            alt=""
-          />
-          <div>{<MDXRemote {...content} />}</div>
         </div>
+        <div>{<MDXRemote {...content} />}</div>
       </div>
     </div>
   )

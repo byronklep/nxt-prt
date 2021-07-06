@@ -1,5 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
+import he from 'he'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 
 import { getPortfolioSlugs, getBlogSlugs, getPost } from '../../lib/data'
 
@@ -21,11 +25,12 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       post: post.posts[0],
+      content: await serialize(he.decode(post.posts[0].content)),
     },
   }
 }
 
-export default function Home({ post }) {
+export default function Home({ post, content }) {
   console.log(post)
 
   return (
@@ -37,6 +42,24 @@ export default function Home({ post }) {
       </Head>
       <div>
         <h1>{post.title}</h1>
+        <p>{new Date(post.date).toDateString()}</p>
+        <p>{post.description}</p>
+        <div>
+          {post.author.name}
+          <Image
+            src={post.author.image.url}
+            width={post.author.image.width / 4}
+            height={post.author.image.height / 4}
+            alt=""
+          />
+        </div>
+
+        <div>
+          {post.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+        <div>{<MDXRemote {...content} />}</div>
       </div>
     </div>
   )
