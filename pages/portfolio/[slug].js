@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 import { getPortfolioSlugs, getPortfolioItem } from '../../lib/data'
 
@@ -27,12 +27,8 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function Home({ portfolioItem }) {
-  const router = useRouter()
-  //   console.log(portfolioItem)
+  console.log(portfolioItem)
 
-  if (router.isFallback) {
-    return <div>Loading...</div>
-  }
   return (
     <div>
       <Head>
@@ -42,6 +38,18 @@ export default function Home({ portfolioItem }) {
       </Head>
       <div>
         <h1>{portfolioItem.title}</h1>
+        <p>{portfolioItem.description}</p>
+        <div>
+          {portfolioItem.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+          <Image
+            src={portfolioItem.coverImage.url}
+            width={portfolioItem.coverImage.width}
+            height={portfolioItem.coverImage.height}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   )
