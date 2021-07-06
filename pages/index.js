@@ -28,7 +28,7 @@ export default function Home({ data }) {
               <a>
                 <div className="relative mb-10 overflow-hidden">
                   <div className="absolute w-full h-full z-10 opacity-60 bg-indigo-900 "></div>
-                  <div className="absolute w-full h-full z-10 opacity-60 bg-indigo-900 flex flex-col justify-center items-center text-2xl">
+                  <div className="absolute w-full h-full z-10 opacity-60 bg-purple-900 flex flex-col justify-center items-center text-2xl">
                     <div>
                       <h3 className="text-white font-semibold">{item.title}</h3>
                       <p className="text-gray-50 text-lg">{item.description}</p>
