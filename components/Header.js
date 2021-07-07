@@ -8,7 +8,7 @@ export default function Header() {
           <Link href="/">
             <a className="text-gray-900 hover:text-gray-700">
               {' '}
-              Sam&apos;s Portfolio
+              <span className="text-indigo-700">Sam&apos;s</span> Portfolio
             </a>
           </Link>
         </div>
