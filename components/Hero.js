@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="max-w3xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col lg:items-center py-20">
+    <div className="max-w3xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col md:items-center py-20">
       <h1 className="text-6xl text-gray-900 text-center font-bold max-w-lg">
         Welcome to <span className="text-green-700">Sam&apos;s Portfolio</span>
       </h1>
