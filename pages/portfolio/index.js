@@ -42,7 +42,7 @@ export default function PortfolioPage({ items }) {
                   src={item.coverImage.url}
                   height={item.coverImage.height}
                   width={item.coverImage.width}
-                  alt=""
+                  alt={item.title}
                   className="absolute"
                 />
               </div>

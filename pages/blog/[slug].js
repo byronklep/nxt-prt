@@ -66,7 +66,7 @@ export default function Home({ post, content }) {
               width={75}
               height={75}
               objectFit="cover"
-              alt=""
+              alt={post.title}
             />
           </div>
         </div>
