@@ -35,7 +35,7 @@ export default function Home({ data }) {
                   <div className="absolute w-full h-full z-10 opacity-80 bg-green-900 flex flex-col justify-center items-center text-2xl text-center px-4">
                     <div>
                       <h3 className="text-white font-semibold">{item.title}</h3>
-                      <p className="text-gray-50 text-lg mt-4 leading-relaxed">
+                      <p className="text-gray-50 text-lg mt-4 leading-relaxed hidden md:flex">
                         {item.description}
                       </p>
                       <div className="mt-4">
@@ -65,6 +65,9 @@ export default function Home({ data }) {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="mt-20">
+          <div className="text-4xl text-gray-900 font-semibold mb-4">
+            Recent Posts
+          </div>
           {data.posts?.map((post) => (
             <div
               className="grid grid-cols-1 md:grid-cols-4 py-6"
