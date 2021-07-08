@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Parallax, Background } from 'react-parallax'
 import SimpleSlider from '../components/SimpleSlider'
 import Tabs from '../components/Tabs'
+import Testimonials from '../components/Testimonials'
 
 function activeTab(element) {
   let siblings = element.parentNode.querySelectorAll('li')
@@ -47,6 +48,7 @@ export default function about() {
       <SimpleSlider />
       <div className="container mx-auto my-20">
         <Tabs />
+        <Testimonials />
       </div>
     </>
   )
