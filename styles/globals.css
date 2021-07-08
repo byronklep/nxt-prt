@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.iconify {
+  width: 80px;
+  height: 80px;
+}
+
+.icon-font {
+  font-size: 24px;
+}
