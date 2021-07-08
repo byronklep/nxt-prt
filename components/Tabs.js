@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1)
@@ -24,7 +25,7 @@ const Tabs = ({ color }) => {
                 data-toggle="tab"
                 href="#link1"
                 role="tablist">
-                Profile
+                Bio
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -42,7 +43,7 @@ const Tabs = ({ color }) => {
                 data-toggle="tab"
                 href="#link2"
                 role="tablist">
-                Settings
+                Education
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -60,7 +61,7 @@ const Tabs = ({ color }) => {
                 data-toggle="tab"
                 href="#link3"
                 role="tablist">
-                Options
+                Interest
               </a>
             </li>
           </ul>
@@ -68,35 +69,104 @@ const Tabs = ({ color }) => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? 'block' : 'hidden'} id="link1">
-                  <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
-                    <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
-                  </p>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="mx-auto p-5 md:p-2">
+                      <p>
+                        Collaboratively administrate empowered markets via
+                        plug-and-play networks. Dynamically procrastinate B2C
+                        users after installed base benefits.
+                        <br />
+                        <br />
+                        Class aptent taciti sociosqu ad litora torquent per
+                        conubia nostra, per inceptos himenaeos. Curabitur
+                        sodales ligula in libero. Sed dignissim lacinia nunc.
+                        Curabitur tortor. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos.
+                        Curabitur sodales ligula in libero. Sed dignissim
+                        lacinia nunc. Curabitur tortor.
+                      </p>
+                    </div>
+                    <div className="mx-auto">
+                      <Image
+                        src="https://via.placeholder.com/150"
+                        height={200}
+                        width={500}
+                        alt=""
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div className={openTab === 2 ? 'block' : 'hidden'} id="link2">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
-                  </p>
+                  <div className="grid md:grid-cols-3 gap-2">
+                    <div className="mx-auto p-5 md:p-2">
+                      <p>
+                        Collaboratively administrate empowered markets via
+                        plug-and-play networks. Dynamically procrastinate B2C
+                        users after installed base benefits.
+                        <br />
+                        <br />
+                        Class aptent taciti sociosqu ad litora torquent per
+                        conubia nostra, per inceptos himenaeos. Curabitur
+                        sodales ligula in libero. Sed dignissim lacinia nunc.
+                        Curabitur tortor. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos.
+                        Curabitur sodales ligula in libero. Sed dignissim
+                        lacinia nunc. Curabitur tortor.
+                      </p>
+                    </div>
+                    <div className="mx-auto">
+                      <Image
+                        src="https://via.placeholder.com/150"
+                        height={200}
+                        width={500}
+                        alt=""
+                      />
+                    </div>
+                    <div className="mx-auto p-5 md:p-2">
+                      <p>
+                        Collaboratively administrate empowered markets via
+                        plug-and-play networks. Dynamically procrastinate B2C
+                        users after installed base benefits.
+                        <br />
+                        <br />
+                        Class aptent taciti sociosqu ad litora torquent per
+                        conubia nostra, per inceptos himenaeos. Curabitur
+                        sodales ligula in libero. Sed dignissim lacinia nunc.
+                        Curabitur tortor. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos.
+                        Curabitur sodales ligula in libero. Sed dignissim
+                        lacinia nunc. Curabitur tortor.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className={openTab === 3 ? 'block' : 'hidden'} id="link3">
-                  <p>
-                    Efficiently unleash cross-media information without
-                    cross-media value. Quickly maximize timely deliverables for
-                    real-time schemas.
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+              </div>
+              <div className={openTab === 3 ? 'block' : 'hidden'} id="link3">
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="mx-auto">
+                    <Image
+                      src="https://via.placeholder.com/150"
+                      height={200}
+                      width={500}
+                      alt=""
+                    />
+                  </div>
+                  <div className="mx-auto p-5 md:p-2">
+                    <p>
+                      Collaboratively administrate empowered markets via
+                      plug-and-play networks. Dynamically procrastinate B2C
+                      users after installed base benefits.
+                      <br />
+                      <br />
+                      Class aptent taciti sociosqu ad litora torquent per
+                      conubia nostra, per inceptos himenaeos. Curabitur sodales
+                      ligula in libero. Sed dignissim lacinia nunc. Curabitur
+                      tortor. Class aptent taciti sociosqu ad litora torquent
+                      per conubia nostra, per inceptos himenaeos. Curabitur
+                      sodales ligula in libero. Sed dignissim lacinia nunc.
+                      Curabitur tortor.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
