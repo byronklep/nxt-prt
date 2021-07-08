@@ -1,6 +1,19 @@
 import Image from 'next/image'
 import { Parallax, Background } from 'react-parallax'
 import SimpleSlider from '../components/SimpleSlider'
+import Tabs from '../components/Tabs'
+
+function activeTab(element) {
+  let siblings = element.parentNode.querySelectorAll('li')
+  for (let item of siblings) {
+    item.classList.add('hover:bg-indigo-50')
+    item.classList.remove('text-indigo-700')
+    item.classList.remove('bg-indigo-100')
+  }
+  element.classList.remove('text-gray-600')
+  element.classList.add('text-indigo-700')
+  element.classList.add('bg-indigo-100')
+}
 
 export default function about() {
   return (
@@ -32,6 +45,9 @@ export default function about() {
         <div style={{ height: '100px' }} />
       </Parallax>
       <SimpleSlider />
+      <div className="container mx-auto my-20">
+        <Tabs />
+      </div>
     </>
   )
 }
