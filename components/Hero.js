@@ -24,7 +24,7 @@ export default function Hero() {
 
       <div className="w-full lg:w-1/2 lg:py-6 text-center">
         <Image
-          className="rounded"
+          className="rounded-lg"
           src="/images/sam-front.jpg"
           height={300}
           width={300}
