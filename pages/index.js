@@ -65,7 +65,7 @@ export default function Home({ data }) {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="mt-20">
-          <div className="text-4xl text-gray-900 font-semibold mb-4">
+          <div className="text-4xl text-gray-900 font-semibold mb-4 dark:text-gray-400">
             Recent Posts
           </div>
           {data.posts?.map((post) => (
@@ -73,20 +73,20 @@ export default function Home({ data }) {
               className="grid grid-cols-1 md:grid-cols-4 py-6"
               key={post.slug}>
               <div className="mb-2 md:mb-0 md:col-span-1">
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm dark:text-gray-400">
                   {new Date(post.date).toDateString()}
                 </p>
               </div>
               <div className="md:col-span-3">
                 <Link href={`/blog/${post.slug}`}>
-                  <a className="text-2xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300">
+                  <a className="text-2xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 dark:text-blue-700">
                     {post.title}
                   </a>
                 </Link>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed dark:text-blue-800">
                   {post.description}
                 </p>
-                <div className="text-sm text-gray-900 font-semibold mt-1 ">
+                <div className="text-sm text-gray-900 font-semibold mt-1 dark:text-indigo-700">
                   {post.author.name}
                 </div>
               </div>
