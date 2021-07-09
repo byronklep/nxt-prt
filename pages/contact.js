@@ -59,7 +59,13 @@ export default function Contact() {
                   id="email"
                   name="email"
                   aria-invalid={errors.email ? 'true' : 'false'}
-                  {...register('email', { required: true })}
+                  {...register('email', {
+                    required: true,
+                    pattern: {
+                      value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: 'Please enter a valid email',
+                    },
+                  })}
                   className={`w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
                   focus:ring-2 ${errors.email ? 'ring-2 ring-red-500' : null}`}
                 />
