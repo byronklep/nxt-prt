@@ -16,7 +16,7 @@ export default function PortfolioPage({ items }) {
   console.log(items)
   return (
     <div className="container mx-auto">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 md:py-24 py-12 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 uppercase">
             checkout my
