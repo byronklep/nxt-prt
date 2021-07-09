@@ -1,4 +1,16 @@
-export default function contact() {
+import { useForm } from 'react-hook-form'
+
+export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  function onSubmitForm(values) {
+    console.log(values)
+  }
+
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto">
@@ -12,54 +24,81 @@ export default function contact() {
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <div className="flex flex-wrap -m-2">
-            <div className="p-2 w-1/2">
-              <div className="relative">
-                <label
-                  htmlFor="name"
-                  className="leading-7 text-sm text-gray-600">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
+            <form className="mx-auto" onSubmit={handleSubmit(onSubmitForm)}>
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    {...register('value_name')}
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="p-2 w-1/2">
-              <div className="relative">
-                <label
-                  htmlFor="email"
-                  className="leading-7 text-sm text-gray-600">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
+              <div className="p-2 ">
+                <div className="relative">
+                  <label
+                    htmlFor="email"
+                    className="leading-7 text-sm text-gray-600">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    {...register('value_email')}
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="p-2 w-full">
-              <div className="relative">
-                <label
-                  htmlFor="message"
-                  className="leading-7 text-sm text-gray-600">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+              <div className="p-2 ">
+                <div className="relative">
+                  <label
+                    htmlFor="phone"
+                    className="leading-7 text-sm text-gray-600">
+                    Phone
+                  </label>
+                  <input
+                    type="phone"
+                    id="phone"
+                    name="phone"
+                    {...register('value_phone')}
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="p-2 w-full">
-              <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Submit
-              </button>
-            </div>
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <div>
+                    <label htmlFor="message" className="sr-only">
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      rows="4"
+                      {...register('value_message')}
+                      className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${
+                        errors.message ? 'ring-2 ring-red-500' : null
+                      }`}
+                      placeholder="Message"></textarea>
+                    <span className="text-red-400 text-sm py-2">
+                      {errors?.message?.message}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 w-full">
+                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  Submit
+                </button>
+              </div>
+            </form>
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
               <a className="text-indigo-500">sam@samklepper.com</a>
               <p className="leading-normal my-5">
