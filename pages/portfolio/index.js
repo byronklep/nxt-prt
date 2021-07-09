@@ -37,8 +37,7 @@ export default function PortfolioPage({ items }) {
               <Link href={`/portfolio/${item.slug}`}>
                 <a>
                   <div className="relative mb-10 overflow-hidden">
-                    <div className="absolute w-full h-full z-10 opacity-60 bg-indigo-900 "></div>
-                    <div className="absolute w-full h-full z-10 opacity-80 bg-indigo-900 flex flex-col justify-center items-center lg:text-xl text-2xl text-center px-4">
+                    <div className="absolute w-full h-full z-10 opacity-80 bg-indigo-700 flex flex-col justify-center items-center lg:text-xl text-2xl text-center px-4">
                       <div>
                         <h3 className="text-white font-semibold">
                           {item.title}
