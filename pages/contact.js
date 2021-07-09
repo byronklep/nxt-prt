@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
 export default function Contact() {
   const {
@@ -7,8 +9,29 @@ export default function Contact() {
     formState: { errors },
   } = useForm()
 
-  function onSubmitForm(values) {
-    console.log(values)
+  const router = useRouter()
+
+  async function onSubmitForm(values) {
+    let config = {
+      method: 'post',
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: values,
+    }
+
+    try {
+      const response = await axios(config)
+
+      if (response.status == 200) {
+        // reset()
+        // router.push('/')
+        console.log(`Success: ${response}`)
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
