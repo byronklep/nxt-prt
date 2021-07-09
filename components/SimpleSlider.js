@@ -7,6 +7,7 @@ import { SiCss3 } from 'react-icons/si'
 import { SiJavascript } from 'react-icons/si'
 import { SiNodeDotJs } from 'react-icons/si'
 import { SiReact } from 'react-icons/si'
+import { SiRedux } from 'react-icons/si'
 import { SiNextDotJs } from 'react-icons/si'
 import { SiMongodb } from 'react-icons/si'
 import { SiGraphql } from 'react-icons/si'
@@ -91,6 +92,12 @@ export default class SimpleSlider extends Component {
             <span>
               <SiNextDotJs className="mx-auto" size={40} />
               <p className="mt-2 icon-font">Next</p>
+            </span>
+          </div>
+          <div className="p-2 flex flex-col">
+            <span>
+              <SiRedux className="mx-auto" size={40} />
+              <p className="mt-2 icon-font">Redux</p>
             </span>
           </div>
           <div className="p-2 flex flex-col">

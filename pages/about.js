@@ -33,7 +33,7 @@ export default function about() {
               width={280}
               alt="Sam"
             />
-            <p className="text-white font-semibold text-xl m-10 lg:mx-20 dark:text-gray-400">
+            <p className="text-white font-semibold text-lg md:text-xl m-10 lg:mx-20 dark:text-gray-400">
               Class aptent taciti sociosqu ad litora torquent per conubia
               nostra, per inceptos himenaeos. Curabitur sodales ligula in
               libero. Sed dignissim lacinia nunc. Curabitur tortor. Class aptent
@@ -43,7 +43,7 @@ export default function about() {
             </p>
           </div>
         </div>
-        <div style={{ height: '100px' }} />
+        <div className="h-auto" />
       </Parallax>
       <SimpleSlider />
       <div className="container mx-auto my-20">
